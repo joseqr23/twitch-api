@@ -3,7 +3,7 @@
 ## 1. Registrarse en Twitch Developers
 [Twitch Developers](https://dev.twitch.tv/console/)
 
-## 2. Crear App en Twitch Developers (Se debe tener la autenticación de doble factor activada en nuestra cuenta de Twitch)
+## 2. Crear App en Twitch Developers (Se debe tener la autenticación de doble factor activada en la cuenta personal de Twitch)
 ### 2.1 En categoria indicar "ChatBot"
 
 ### 2.2 En "Direcciones de redireccionamiento de OAuth" debemos colocar un url de redirección 
