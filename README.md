@@ -9,11 +9,11 @@
 ### 2.2 En "Direcciones de redireccionamiento de OAuth" debemos colocar un url de redirección 
 - Redirect Url: http://localhost:5500/index.html
 
-### 2.3 Al crear la app obtenemos estas credenciales
+### 2.3 Al crear la app obtenemos el ClientID
 - Client ID: 3wrpnq6...
 
 
-## 3. Enviar credenciales "client_id" y "redirect_url" al siguiente enlace (el redirect_url debe ser el mismo que indicamos al crear la app)
+## 3. Enviar credenciales "client_id" y "redirect_url" junto con el siguiente enlace (el redirect_url debe ser el mismo que indicamos al crear la app)
 https://id.twitch.tv/oauth2/authorize?client_id={clientid}&redirect_uri={urlredirect}&response_type=token&scope=user:read:email
 
 ### Esta será la respuesta que obtendremos en el url de nuestro servidor indicado, dentro se encuentra el access_token que usaremos para consumir la API
