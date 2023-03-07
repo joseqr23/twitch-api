@@ -16,6 +16,7 @@ export const getProfileData = async (req, res) => {
 
 	try {
 		const { user } = req.params;
+
 		const urlProfile = `https://api.twitch.tv/helix/users?login=${user}`
 		const response = await fetch(urlProfile, { headers: headers })
 		const data = await response.json()
@@ -26,7 +27,7 @@ export const getProfileData = async (req, res) => {
 		console.log(error)
 	}
 }
-getProfileData() 
+
 
 
 export const getAllFollowers = async (_req, res) => {
@@ -45,11 +46,7 @@ export const getAllFollowers = async (_req, res) => {
 
 			allData.push(...data.data);
 
-			if (data.pagination && data.pagination.cursor) {
-				cursorValue = `&after=${data.pagination.cursor}`;
-			} else {
-				hasNextPage = false;
-			}
+			data.pagination && data.pagination.cursor ? cursorValue = `&after=${data.pagination.cursor}` : hasNextPage = false;
 
 			allData.forEach((follower) => {
 				allFollowers[cont] = follower.from_name
@@ -58,7 +55,7 @@ export const getAllFollowers = async (_req, res) => {
 			})
 		}
 		res.status(200).json({ ok: true, count: allData.length, data: allFollowers })
-	} 
+	}
 	catch (error) {
 		res.status(500).json({ ok: false, message: error });
 	}
